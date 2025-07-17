@@ -1,0 +1,103 @@
+/*Escrever um algoritmo que lê 5 pares de valores a, b, todos inteiros e positivos, um par de cada vez, e com a < b,
+escreve os inteiros pares de a até b, incluindo o a e o b se forem pares.*/
+
+#include <stdio.h>
+
+int main (){
+    int i = 0, a, b, aux;
+
+    while (i < 5)
+    {
+        printf("Insira um valor para A (inteiro e positivo):\n");
+        scanf("%d", &a);
+        if (a < 0)
+        {
+            do
+            {
+                printf("Erro: Por favor insira um número inteiro e positivo.\n");
+                printf("Insira um valor para A (Inteiro e positivo.):\n");
+                scanf("%d", &a);
+            } while (a < 0);
+            
+        }
+
+        printf("Insira um valor para B:\n");
+        scanf("%d", &b);
+        if (b < 0)
+        {
+            do
+            {
+                printf("Erro: Por favor insira um número inteiro e positivo.\n");
+                printf("Insira um valor para B (Inteiro e positivo.):\n");
+                scanf("%d", &b);
+            } while (b < 0);
+        }
+
+        if (b < a)
+        {
+            printf("Erro: o valor de A tem que ser maior que o valor de B.\n");
+            do
+            {
+                printf("Insira um valor para A (Inteiro e positivo.):\n");
+                scanf("%d", &a);
+                if (a < 0)
+                {
+                    do
+                    {
+                        printf("Erro: Por favor insira um número inteiro e positivo.\n");
+                        printf("Insira um valor para A (Inteiro e positivo.):\n");
+                        scanf("%d", &a);
+                    } while (a < 0);
+            
+                }
+
+                printf("Insira um valor para B (Inteiro e positivo.):\n");
+                scanf("%d", &b);
+                if (b < 0)
+                {
+                    do
+                {
+                        printf("Erro: Por favor insira um número inteiro e positivo.\n");
+                        printf("Insira um valor para B (Inteiro e positivo.):\n");
+                        scanf("%d", &b);
+                } while (b < 0);
+                }
+            } while (b < a);
+        }
+        
+        if (a % 2 == 0 && b % 2 == 0)
+        {
+            for (int i = a; i <= b; i+=2)
+            {
+                printf("%-2d", i);
+            }
+        }
+        else if (a % 2 != 0 && b % 2 == 0)
+        {
+
+            for (int i = a + 1; i <= b; i+=2)
+            {
+                printf("%-2d", i);
+            }
+            
+        }
+        else if(a % 2 == 0 && b % 2 != 0)
+        {
+            for (int i = a; i < b; i+=2)
+            {
+                printf("%-2d", i);
+            }
+        }
+        else
+        {
+            for (int i = a + 1; i < b; i+=2)
+            {
+                printf("%-2d", i);
+            }
+            
+        }
+    i++;
+    }
+
+    return 0;
+}

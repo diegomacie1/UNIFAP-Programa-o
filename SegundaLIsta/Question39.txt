@@ -1,0 +1,32 @@
+/*Escrever um algoritmo que gera e escreve os 5 primeiros números perfeitos. Um número perfeito é aquele que é
+igual a soma dos seus divisores. (Ex.: 6 = 1+2+3; 28= 1+2+4+7+14 etc).*/
+
+#include <stdio.h>
+
+int main()
+{
+    int contador = 0, numeroP = 2; 
+    long long int soma_d_divisores = 0;
+    
+    while (contador < 5)
+    {
+        soma_d_divisores = 0;
+        for (int i = 1; i <= numeroP / 2; i++)
+        {
+            if (numeroP % i == 0)
+            {
+                soma_d_divisores += i;
+            }
+            
+        }
+        if (soma_d_divisores == numeroP)
+        {
+            printf("Número perfeito %d: %d\n", contador +1, numeroP);
+            contador++;
+        }
+
+        numeroP++;
+    }
+
+    return 0;
+}

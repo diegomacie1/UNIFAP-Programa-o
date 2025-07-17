@@ -1,0 +1,38 @@
+/*Escreva um algoritmo que leia um número n (número de termos de uma progressão aritmética), a1 ( o primeiro
+termo da progressão) e r (a razão da progressão) e escreva os n termos desta progressão, bem como a soma dos
+elementos.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int n, a1, r, soma = 0, somaE  = 0;
+    printf("Insira o número de termos da progressão aritimética.\n");
+    scanf("%d", &n);
+    if (n <= 0)
+    {
+        printf("Erro: por favor, insira um valor positivo e maior que zero.\n");
+
+        return 1;
+    }
+    
+
+    printf("Insira o Primeiro termo da progressão aritmética.\n");
+    scanf("%d", &a1);
+
+    printf("Escreva a razão da progressão aritmética.\n");
+    scanf("%d", &r);
+
+    soma = a1;
+    printf("%-4d", a1);
+    for (int i = 0; i < n - 1; i++)
+    {
+        soma += r;
+        printf("%-4d", soma);
+        somaE += soma;
+    }
+    somaE += a1;
+    printf("\nA soma dos elementos inseridos foi: %d\n", somaE);
+
+    return 0;
+}

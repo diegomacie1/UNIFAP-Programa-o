@@ -1,0 +1,28 @@
+/*Escrever um algoritmo que leia 20 valores para uma variável N e, para cada um deles, calcule a tabuada de 1 até N.
+Mostre a tabuada na forma: 
+1 * N
+2 * N
+3 * N
+N * N*/
+
+#include <stdio.h>
+
+int main()
+{
+    int n, multi = 0;
+
+    for (int j = 0; j < 20; j++)
+    {
+        printf("Insira o valor a ser multiplicado.\n");
+        scanf("%d", &n);
+
+        for (int i =1; i <= n; i++)
+        {
+            multi = i * n;
+            printf("%d * %d = %d\n", i, n, multi);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}

@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, p;
+    unsigned long long int fatorial = 1, fatorialp = 1, fatorialF = 1;
+
+    printf("Insira o número de elementos que o conjunto deve possuir:\n");
+    scanf("%d", &n);
+
+    printf("Insira quantos desse elementos devem formar um subconjunto a ser tratado, deve ser menor ou igual ao valor inserido para o conjunto:\n");
+    scanf("%d", &p);
+
+    for (int i = n; i >= n - (p - 1); i--)
+    {
+        fatorial *= i;
+    }
+    printf("Arranjo de %d é: %llu\n", n, fatorial);
+
+    fatorial = 1;
+    for (int i = n; i >= n - (p - 1); i--)
+    {
+        fatorial *= i;
+    }
+    for (int i = p; i >= 1; i--)
+    {
+        fatorialp *= i;
+    }
+    fatorialF = fatorial / fatorialp;
+    printf("A combinação de %d é: %llu\n", n, fatorialF);
+    
+    return 0; 
+}

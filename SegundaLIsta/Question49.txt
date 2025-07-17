@@ -1,0 +1,38 @@
+/*Faça um algoritmo que lê um valor N inteiro e positivo e que calcula e escreve o fatorial de N (N!)*/
+
+#include <stdio.h>
+
+int main()
+{
+    int x; 
+    unsigned long long fatorial = 1;
+
+    printf("Insira um valor inteiro e positivo.\n");
+    scanf("%d", &x);
+
+    if (x < 0)
+    {
+        printf("Nenhum número válido foi inserido. Tente novamente.\n");
+        return 1;    
+    }
+    else if (x == 0)
+    {
+        printf("0! = 1");
+    }
+    else if (x > 20)
+    {
+        printf("Esse número é muito grande, e vai além das capacidades do programa.\n");
+        return 1;
+    }
+    else
+    {
+        for (int i = 1; i <= x; i++)
+        {
+            fatorial *= i;
+        }
+        printf("%d! = %llu", x, fatorial);
+        
+    }
+    
+    return 0;
+}

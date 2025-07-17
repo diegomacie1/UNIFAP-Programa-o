@@ -1,0 +1,37 @@
+/*Escrever um algoritmo que leia 5 conjuntos de 2 valores, o primeiro representando o numero de um aluno, o segundo representando sua altura em centímetros.
+Encontre o aluno mais alto e o mais baixo.
+Mostre o número do aluno mais alto e do mais baixo, junto com suas alturas.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int i = 0, altura, numero, numeroAM = 0, numeroAMR = 0, maiorAlt = 0, menorAlt = 999999;
+
+    while(i < 5)
+    {
+        
+        printf("Qual é o seu número?\n");
+        scanf("%d", &numero);
+
+        printf("Qual é a sua altura? (em centímetros)\n");
+        scanf("%d", &altura);
+
+        if (maiorAlt < altura)
+        {
+            maiorAlt = altura;
+            numeroAM = numero;
+        }
+        if (menorAlt > altura)
+        {
+            menorAlt = altura;
+            numeroAMR = numero;
+        }
+        i++;
+    }
+    printf("O maior aluno foi: %d. Com %d cm\n", numeroAM, maiorAlt);
+    printf("O menor aluno foi: %d. Com %d cm\n", numeroAMR, menorAlt);
+
+
+    return 0;
+}

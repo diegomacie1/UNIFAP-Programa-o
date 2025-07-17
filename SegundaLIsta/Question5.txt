@@ -1,0 +1,35 @@
+/*Construir um algoritmo que calcule a media aritmética de vários valores inteiros positivos, lidos externamente.
+O final da leitrura acontecerá quanado for lido um valor negativo.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int x, contador = 0, somador = 0;
+    float MediaT;
+
+    while(1)
+    {
+        printf("Insira um número inteiro positivo. Para encerrar digite um número negativo:\n");
+        scanf("%d", &x);
+        if (x < 0)
+        {
+            printf("Fim.\n");
+            break;
+        }
+        contador++;
+        somador += x;
+    }
+    if (contador == 0)
+    {
+        printf("Nenhum número válido foi inserido.\n");
+    }
+    else
+    {
+        MediaT = (float)somador / contador;
+
+        printf("A média total dos números inseridos é: %.2f", MediaT);
+    }
+
+    return 0;
+}

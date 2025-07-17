@@ -1,0 +1,42 @@
+/*Faça uma algoritmo que leia tres notas de 50 alunos de uma turma.
+Para cada aluno, calcule a media ponderada, como segue MP=(n1*2 + n2*4 + n3*3) / 10 */
+
+#include <stdio.h>
+
+int main()
+{
+    int i = 0, contador = 0;
+    float N1, N2, N3, mediaP = 0.0, mediaG = 0.0, somaG = 0.0;
+
+    while (i < 50)
+    {
+        printf("Por favor, insira a sua primeira nota.\n");
+        scanf("%f", &N1);
+
+        printf("Por favor, insira a sua segunda nota.\n");
+        scanf("%f", &N2);
+
+        printf("Por favor, insira a sua terceira nota.\n");
+        scanf("%f", &N3);
+
+        mediaP = ((N1 * 2) + (N2 *4) + (N3 * 3)) / 10;
+        contador++;
+        somaG += mediaP;
+
+        printf("A media ponderada foi: %.1f\n", mediaP);
+        if (mediaP >= 7)
+        {
+            printf("Aprovado.\n");
+        }
+        else
+        {
+            printf("Reprovado.\n");
+        }
+        
+        i++;
+    }
+    mediaG = somaG / (float)contador;
+    printf("A média geral da turma foi: %.1f\n", mediaG);
+
+    return 0;
+}

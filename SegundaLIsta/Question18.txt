@@ -1,0 +1,62 @@
+/*Escrever um algoritmo que lê um número não determinado de valores para m, todos inteiros e positivos, um de cada
+vez. Se m for par, verificar quantos divisores possui e escrever esta informação. Se m for ímpar e menor do que 10
+calcular e escrever o fatorial de m. Se m for ímpar e maior ou igual a 10 calcular e escrever a soma dos inteiros de 1 até
+m.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int M, fatorial, soma = 0, contadorpar = 0;
+    while (1)
+    {
+        printf("Insira um valor para M:\n");
+        scanf("%d", &M);
+
+        if (M < 0)
+        {
+            printf("Erro: por favor insira um número positivo.\n");
+
+            continue;
+        }
+        
+        if (M % 2 == 0)
+        {
+            contadorpar = 0;
+            for (int i = 1; i <= M; i++)
+            {
+                if (M % i == 0)
+                {
+                    contadorpar++;
+                }
+            }
+            printf("O número %d possui %d divisores.\n", M, contadorpar);
+            
+        }
+        else 
+        {
+            if (M < 10)
+            {
+                fatorial = 1;
+                for (int i = M; i >= 1; i--)
+                {
+                    fatorial *= i;
+                }
+                printf("O fatorial de %d é: %d\n", M, fatorial);
+            }
+            else
+            {
+                soma = 0;
+                for (int i = 1; i <= M; i++)
+                {
+                    soma += i;
+                }
+                printf("A soma dos inteiros de um até %d: %d", M, soma);
+            }
+            
+        }
+        
+    }
+    
+    return 0;
+}

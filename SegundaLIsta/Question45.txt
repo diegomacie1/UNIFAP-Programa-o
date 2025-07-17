@@ -1,0 +1,64 @@
+/*Colete de 1000 habitantes de uma região:
+sexo, idade e altura e mostre:
+a media da idade do grupo
+a media da altura das mulheres
+a media da idade dos homens
+o percentual de pessoas com idade entre 18 e 35 anos (inclusive)*/
+
+#include <stdio.h>
+
+int main()
+{
+    int i = 0, idade, sexo, altura, contadoridadeG = 0, somaidadeG = 0, somaidadeHM = 0, contadoridadeHM = 0, somaaltM = 0, contadorAltM = 0, contador18e35 = 0;
+    float mediaAltM = 0.0, mediaidadeG = 0.0, mediaidadeHM = 0.0, percent = 0.0; 
+
+    while(i < 1000)
+    {
+        printf("Insira o sexo: 0 (zero) para feminino e 1 (um) para masculino.\n");
+        scanf("%d", &sexo);
+
+        printf("Insira a sua idade:\n");
+        scanf("%d", &idade);
+
+        printf("Insira a sua altura (em centímetros):\n");
+        scanf("%d", &altura);
+
+        somaidadeG += idade;
+        contadoridadeG++;
+        if (sexo == 0)
+        {
+            somaaltM += altura;
+            contadorAltM++;
+        }
+        else if (sexo == 1)
+        {
+            somaidadeHM += idade;
+            contadoridadeHM++;
+        }
+        
+        if (idade >= 18 && idade <= 35)
+        {
+            contador18e35++;
+        }
+    i++;
+    }
+    if (contadoridadeG == 0)
+    {
+        printf("Nenhum dado válido foi inserido.\n");
+    }
+    else 
+    {
+        mediaidadeG = somaidadeG / (float)contadoridadeG;
+        mediaAltM = somaaltM / (float)contadorAltM;
+        mediaidadeHM = somaidadeHM / (float)contadoridadeHM;
+        percent = (contador18e35 / (float)contadoridadeG) * 100;
+
+        printf("A média da idade do grupo registrada foi: %.3f\n", mediaidadeG);
+        printf("A altura média das mulheres do grupo registrada foi: %.3f\n", mediaAltM);
+        printf("A idade média registrada dos homens foi: %.3f\n", mediaidadeHM);
+        printf("O percentual de pessoas com idade entre 18 e 35 anos foi: %.3f%%\n", percent);
+
+    }
+    
+    return 0;
+}

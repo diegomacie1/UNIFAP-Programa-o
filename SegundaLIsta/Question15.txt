@@ -1,0 +1,51 @@
+/*Escrever um algoritmo que leia uma quantidade desconhecida de números e conte quantos deles estão nos seguintes intervalos:
+[0,25], [26,50]. [51,75], [76,100]
+A entrada de dados deve terminar quando for lido um número negativo.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int numero, contador1 = 0, contador2 = 0, contador3 = 0, contador4 = 0;
+
+    while (1)
+    {
+        printf("Insira um valor qualquer:\n");
+        scanf("%d", &numero);
+        if (numero < 0)
+        {
+            printf("Você encerrou a contagem.\n");
+            
+            break;
+        }
+        else if (numero >= 0 && numero <= 25)
+        {
+            contador1++;
+        }
+        else if (numero >= 26 && numero <= 50)
+        {
+            contador2++;
+        }
+        else if (numero >= 51 && numero <= 75)
+        {
+            contador3++;
+        }
+        else if (numero >= 76 && numero <= 100)
+        {
+            contador4++;
+        }
+    }
+    if (contador1 == 0 && contador2 == 0 && contador3 == 0 && contador4 == 0)
+    {
+        printf("Nenhum número válido foi inserido.\n");
+    }
+    else
+    {
+        printf("A quantidade de número no intervalo [0,25] foi: %d\n", contador1);
+        printf("A quantidade de número no intervalo [26,50] foi: %d\n", contador2);
+        printf("A quantidade de número no intervalo [51,75] foi: %d\n", contador3);
+        printf("A quantidade de número no intervalo [76,100] foi: %d\n", contador4);
+    }
+    
+    return 0;
+}

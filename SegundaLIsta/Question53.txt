@@ -1,0 +1,34 @@
+/*Faça um algoritmo que calcule os 20 primeiros números primos, dados os tres primeiros 1,2 e 3.*/
+
+#include <stdio.h>
+
+int main()
+{
+    printf("Números primos:\n");
+    printf("1\n");
+    printf("2\n");
+    printf("3\n");
+
+    for (int i = 4; i < 70; i++)
+    {
+        if (i % 2 == 0 ||  i % 3 == 0 || i % 5 == 0 || i % 7 == 0)
+        {
+            if (i % 5 == 0 && i == 5)
+            {
+                printf("%d\n", i);
+            }
+            else if (i % 7 == 0 && i == 7)
+            {
+                printf("%d\n", i);
+            }
+            
+        }
+        else
+        {
+            printf("%d\n", i);
+        }
+        
+    }
+
+    return 0;
+}

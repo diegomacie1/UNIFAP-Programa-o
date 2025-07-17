@@ -1,0 +1,50 @@
+/*Uma empresa deseja aumentar seus preços em 20%. 
+Faça um algoritmo que leia o código e o preço de custo de cada produto e calcule o preço novo.
+Calcule também, a média dos preços com e sem aumento. Mostre o código eo preço novo de cada produto, e
+no final, as médias. A entrada de dados deve terminar quando for lido um codigo de produto negativo.
+(Use o comando enquanto-faça)*/
+
+#include <stdio.h>
+
+int main(){
+
+
+    int code = 0, contador = 0;
+    float price, Pnovo = 0, Pantigo = 0, MediaA, MediaD, somaPnovo = 0; 
+
+    while (1)
+    {
+        printf("Insira o código do produto abaixo:\n");
+        scanf("%d", &code);
+        if (code < 0)
+        {
+            printf("Fim dos produtos.\n");
+            break;
+        }
+
+        printf("Insira o preço do produto.\n");
+        scanf("%f", &price);
+
+        contador += 1; 
+        Pantigo += price;
+        Pnovo = price * 1.20;
+        somaPnovo += Pnovo;
+
+        printf("O preço antigo era: %.2f\n", price);
+        printf("O preço apos o aumento de vinte porcento foi: %.2f\n", Pnovo);
+    }
+    if (contador > 0)
+    {
+        MediaA = Pantigo / contador;
+        MediaD = somaPnovo / contador;
+
+        printf("A media dos preços antes do aumento de vinte porcento era de: %.2f\n", MediaA);
+        printf("A media dos preços dos produtos após o aumento é: %.2f\n", MediaD);
+    }
+    else
+    {
+        printf("Nenhum valor válido foi inserido.\n");
+    }
+    
+    return 0;
+}

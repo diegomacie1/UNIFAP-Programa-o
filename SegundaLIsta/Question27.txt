@@ -1,0 +1,66 @@
+/*Escreva um algoritmo que leia 500 valores inteiros e positivos e:
+a) encontre o maior valor;
+b) encontre o menor valor;
+c) calcule a media dos numeros lidos*/
+
+#include <stdio.h>
+
+int main(){
+
+    int x, Maior_valor, Menor_valor; 
+    float Media = 0.0, soma;
+
+    printf("Insira um número inteiro e positivo:\n");
+    scanf("%d", &x);
+    if (x < 0)
+    {
+        while (1)
+        {
+            printf("Por favor, insira um número positivo.\n");
+            scanf("%d", &x);
+            if (x > 0)
+            {
+                break;
+            }
+            
+        }
+    }
+    
+    soma = x;
+    Maior_valor = x;
+    Menor_valor = x;
+
+    for (int i = 1; i < 500; i++)
+    {
+        do
+        {
+            printf("Insira um número inteiro e positivo.\n");
+            scanf("%d", &x);
+        }    while (x <= 0);
+
+        soma += x;
+        if (x > Maior_valor)
+        {
+            Maior_valor = x;
+        }
+        if (x < Menor_valor)
+        {
+            Menor_valor = x;
+        }
+        
+        
+    }
+    if (Maior_valor != Menor_valor)
+    {
+        Media = soma / 500.0;
+        printf("A media dos números lidos é: %.2f\n", Media);
+        printf("O maior valor inserido foi: %d\n", Maior_valor);
+        printf("O menor valor inserido foi: %d\n", Menor_valor);
+    }
+    else
+    {
+        printf("Os números são iguais.\n");
+    }
+
+    return 0;
+}

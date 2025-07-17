@@ -1,0 +1,38 @@
+/*Escreva um algoritmo que calcule a média dos números digitados pelo usuário, se eles forem pares.
+termine a leitura se o usuário digitar zero (0).*/
+
+#include <stdio.h>
+
+int main()
+{
+
+    int x, contador = 0, soma = 0;
+    float mediaA;
+
+    while (1)
+    {
+        printf("Insira um número inteiro.\n");
+        scanf("%d", &x);
+        if ( x == 0)
+        {
+            break;
+        }
+        else if (x % 2 == 0)
+        {
+            contador++;
+            soma += x;
+        }
+    }
+    if (contador > 0)
+    {
+        mediaA = (float)soma / contador;
+
+        printf("A media dos números pares inseridos é: %.2f", mediaA);
+    }
+    else
+    {
+        printf("Nenhum número par foi inserido.\n");
+    }
+    
+    return 0;
+}

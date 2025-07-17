@@ -1,0 +1,67 @@
+/*Faça um algoritmo que leia uma quantidade não determinada de números positivos.
+Calcule a quantidade de números pares e ímpares, a média dos valores pares e a média geral dos números lidos.
+O número que encerrará a leitura será zero.*/
+
+#include <stdio.h>
+
+int main()
+{
+
+    int x, contadorP = 0, contadorI = 0, somaP = 0, somaI = 0, somaT = 0, contadorG = 0;
+    float MediaP = 0, MediaG = 0;
+
+    while (1)
+    {
+        printf("Insira um número inteiro positivo. (Digite zero para encerrar).\n");
+        scanf("%d", &x);
+        if (x == 0)
+        {
+            printf("Você encerrou a contagem.\n");
+            break;
+        }
+        else if (x < 0)
+        {
+            printf("Por favor, insira um número inteiro positivo.\n");
+            continue;
+        }
+        else if (x % 2 == 0)
+        {
+            contadorP++;
+            somaP += x;
+        }
+        else if (x % 2 != 0)
+        {
+            contadorI++;
+            somaI += x;
+        }
+    }
+
+    somaT = somaP + somaI;
+    contadorG = contadorP + contadorI;
+
+    MediaP = (float) somaP / contadorP;
+    MediaG = (float) somaT / contadorG;
+
+    if (contadorG == 0)
+    {
+        printf("Nenhum número válido foi inserido.\n");
+    }
+    else 
+    {
+        if (contadorP > 0)
+        {
+            printf("A quantidade de números pares inserida foi: %d\n", contadorP);
+            printf("A media geral dos números pares foi: %.4f\n", MediaP);
+        }
+        else
+        {
+            printf("Nenhum número par foi inserido.\n");
+            printf("A media geral dos números pares foi: zero\n");
+        }
+        
+        printf("A quantidade de números ímpares inserida foi: %d\n", contadorI);
+        printf("A média geral dos números lidos foi de %.4f\n", MediaG);
+    }
+
+    return 0;
+}

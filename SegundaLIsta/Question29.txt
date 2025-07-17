@@ -1,0 +1,19 @@
+/*Escreva um algoritmo que calcule e mostre a media aritmetica dos numeros lidos entre 13 e 73*/
+
+#include <stdio.h>
+
+int main(){
+
+    int count = 0, soma = 0;
+    float media;
+    for (int i = 14; i < 73; i++)
+    {
+        soma += i;
+        count++;
+    }
+    media = (float)soma / count;
+
+    printf("A média dos números contidos entre 13 e 73 é: %.2f", media);
+    
+    return 0;
+}

@@ -1,0 +1,75 @@
+/*Escreve um algoritmo que leia um cojunto de 50 informações contendo, altura, sexo de uma pessoa cod = 1 masculino, cod =2 feminino.
+mostra a maior e menor altura da turma.
+media da altura das mulheres
+media da altura da turma*/
+
+#include <stdio.h>
+
+int main()
+{
+    int i = 0, maiorH = 0, menorH = 99999, sexo, altura, somaHM = 0, contadorM = 0, contadorG = 0, somaG = 0;
+    float mediaHM = 0.0, mediaG = 0.0;
+
+    while (i < 50)
+    {
+        printf("Qual é a sua altura? (em centímetros)\n");
+        scanf("%d", &altura);
+        if (altura < 0)
+        {
+            do
+            {
+                printf("Erro: por favor, insira um valor válido.\n");
+                printf("Qual é a sua altura? (em centímetros)\n");
+                scanf("%d", &altura);
+            } while (altura < 0);
+            
+        }
+        if (altura > maiorH)
+        {
+            maiorH = altura;
+        }
+        if (altura < menorH)
+        {
+            menorH = altura;
+        }
+        
+        printf("Qual seu sexo? (Digite 1 (um) para masculino e 2 (dois) para feminino.\n");
+        scanf("%d", &sexo);
+        if (sexo < 1 || sexo > 2)
+        {
+            do
+            {
+                printf("Erro: por favor insira um número válido.\n");
+                printf("Qual seu sexo? (Digite 1 (um) para masculino e 2 (dois) para feminino.\n");
+                scanf("%d", &sexo);
+            } while (sexo < 1|| sexo > 2);
+        }
+        somaG += altura;
+        contadorG++;
+        if (sexo == 2 && altura > 0)
+        {
+            somaHM += altura;
+            contadorM++;
+        }
+    i++;
+    }
+    mediaG = somaG / (float)contadorG;
+    if (contadorM == 0)
+    {
+        printf("Não houve mulheres nesta pesquisa.\n");
+        printf("A maior altura resgistrada foi: %d cm\n", maiorH);
+        printf("A menor altura resgistrada foi: %d cm\n", menorH);
+        printf("A média da altura da turma foi: %.2f cm\n", mediaG);
+    }
+    else
+    {
+        mediaHM = somaHM / (float)contadorM;
+
+        printf("A maior altura resgistrada foi: %d cm\n", maiorH);
+        printf("A menor altura resgistrada foi: %d cm\n", menorH);
+        printf("A média da altura das mulheres foi: %.2f cm\n", mediaHM);
+        printf("A média da altura da turma foi: %.2f cm\n", mediaG);
+    }
+
+    return 0;
+}

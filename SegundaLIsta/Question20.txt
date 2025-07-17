@@ -1,0 +1,39 @@
+/* Faça um algoritmo que leia vários números inteiros e calcule  o somatorio dos números negativos.
+O fim da leitura será indicado pelo número zero.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int x, somador = 0;
+
+    while (1)
+    {
+        printf("Insira um número negativo.\n");
+        scanf("%d", &x);
+        if (x == 0)
+        {
+            printf("Você encerrou a contagem.\n");
+            break;
+        }
+        else if (x > 0)
+        {
+            printf("Porfavor insira um valor negativo.\n");
+            continue;
+        }else
+        {
+            somador += x;
+        }
+    }
+    if (somador == 0)
+    {
+        printf("Nenhum número válido foi inserido.\n");
+    }
+    else
+    {
+        printf("O somatório de números negativos foi de: %d", somador);
+    }
+
+    return 0;
+}
+   

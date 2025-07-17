@@ -1,0 +1,37 @@
+/*Escrever um algoritmo que calcule a média aritmética das 3 notas dos alunos de uma classe.
+O algoritmo deverá ler, além das notas, o código do aluno  e deverá  ser encerrado quando o código for igual a zero.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int code;
+    float mediaA, nota1, nota2, nota3;
+
+    while (1)
+    {
+        printf("Insira o código do aluno abaixo:\n");
+        scanf("%d", &code);
+         if (code == 0)
+        {
+            printf("Fim");
+            break;
+        }
+        
+        printf("Insira a sua primeira nota:\n");
+        scanf("%f", &nota1);
+
+        printf("Insira a sua segunda nota:\n");
+        scanf("%f", &nota2);
+
+        printf("Insira a sua terceira nota:\n");
+        scanf("%f", &nota3);
+
+        mediaA = (nota1 + nota2+ nota3) / 3.0;
+
+        printf("A media de notas do aluno %d foi de: %.2f\n", code, mediaA);
+        
+    }
+
+    return 0;
+}

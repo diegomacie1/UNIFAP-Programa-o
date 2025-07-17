@@ -1,0 +1,66 @@
+/*Escrever um algoritmo que leia um número não determinado de valores e calcule a média aritmética dos valores
+lidos, a quantidade de valores positivos, a quantidade de valores negativos e o percentual de valores negativos e
+positivos. Mostre os resultados.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int valor, contador1 = 0, contador2 = 0, contadorG = 0;
+    float mediaG = 0.0, somaG = 0.0, percentP = 0.0, percentN = 0.0;
+
+    while (1)
+    {
+        printf("Insira um valor qualquer (para encerrar a contagem digite 0):\n");
+        scanf("%d", &valor);
+        if (valor == 0)
+        {
+            printf("Entrada de dados encerrada.\n");
+            break;
+        }
+
+        contadorG++;
+        somaG += valor;
+
+        if (valor > 0)
+        {
+            contador1++;
+        }
+        else 
+        {
+            contador2++;
+        }
+    }
+    if (contadorG == 0)
+    {
+        printf("Nenhum número válido foi inserido.\n");
+    }
+    else
+    {
+        mediaG = somaG / (float)contadorG;
+        printf("A média aritmetrica dos valores lidos foi: %.3f\n", mediaG);
+    }
+    if (contador1 == 0)
+    {
+        printf("Nenhum número positivo foi inserido.\n");
+    }
+    else
+    {
+        printf("A quantidade de números positivos inseridos foi: %d\n", contador1);
+
+        percentP = (contador1 / (float)contadorG) * 100;
+        printf("O percentual de valores positivos foi: %.3f%%\n", percentP);
+    }
+    if (contador2 == 0)
+    {
+        printf("Nenhum número negativo foi inserido.\n");
+    }
+    else
+    {
+        printf("A quantidade de números negativos inseridos foi: %d\n", contador2);
+        percentN = (contador2 / (float)contadorG) * 100;
+        printf("O percentual de valores negativos foi: %.3f%%\n", percentN);
+    }
+    
+    return 0;
+}

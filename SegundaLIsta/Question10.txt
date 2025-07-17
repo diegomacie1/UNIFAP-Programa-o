@@ -1,0 +1,63 @@
+/*Escreva um algoritmo que leia o código de um aluno e suas três notas. Calcule a média ponderada do aluno,
+considerando que o peso para a maior nota seja 4 e para as duas restantes, 3. Mostre o código do aluno, suas três
+notas, a média calculada e uma mensagem "APROVADO" se a média for maior ou igual a 5 e "REPROVADO" se a
+média for menor que 5. Repita a operação até que o código lido seja negativo.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int code; 
+    float N1, N2, N3, mediaP = 0;
+
+    while (1)
+    {
+        printf("Insira o seu código.\n");
+        scanf("%d", &code);
+
+        if (code < 0)
+    {
+        printf("Você encerrou a contagem.\n");
+
+        break;
+    }
+
+        printf("Insira sua primeira nota:\n");
+        scanf("%f", &N1);
+
+        printf("Insira sua segunda nota:\n");
+        scanf("%f", &N2);
+
+        printf("Insira sua terceira nota:\n");
+        scanf("%f", &N3);
+
+        if (N1 >= N2 && N1 >= N3)
+        {
+            mediaP = ((N1 * 4) + (N2 *3) + (N3 *3)) / 10;
+        }
+        else if (N2 >= N1 && N2 >= N3)
+        {
+            mediaP = ((N1 * 3) + (N2 *4) + (N3 *3)) / 10;
+        }
+        else
+        {
+            mediaP = ((N1 * 3) + (N2 *3) + (N3 *4)) / 10;
+        }
+
+        printf("A primeira nota do estudante %d, foi: %.1f\n", code, N1);
+        printf("A segunda nota do estudante %d, foi: %.1f\n", code, N2);
+        printf("A terceira nota do estudante %d, foi: %.1f\n", code, N3);
+        printf("A media de notas do estudante %d, foi: %.1f.\n", code, mediaP);
+        
+        if (mediaP >= 5)
+        {
+            printf("Aprovado.\n");
+        }
+        else
+        {
+            printf("Reprovado.\n");
+        }
+    }
+    
+    return 0;
+}

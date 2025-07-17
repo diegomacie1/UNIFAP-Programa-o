@@ -1,0 +1,73 @@
+/*Fazer um algoritmo que leia 5 grupos de 4 valores (A,B,C,D) e mostre-os na ordem lida. Em seguida, ordene-os em
+ordem decrescente e mostre-os novamente, já ordenados.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int i = 0, A, B, C, D, aux = 0;
+
+    while (i < 5)
+    {
+        printf("Insira um valor para A:\n");
+        scanf("%d", &A);
+
+        printf("Insira um valor para B:\n");
+        scanf("%d", &B);
+
+        printf("Insira um valor para C:\n");
+        scanf("%d", &C);
+
+        printf("Insira um valor para D:\n");
+        scanf("%d", &D);
+
+        printf("Valores inseridos:\n");
+        printf("\n=============================\n");
+        printf("%d %d %d %d\n\n", A, B, C, D);
+
+        if (A < B)
+        {
+            aux = A;
+            A = B;
+            B = aux;
+        }
+        if (A < C)
+        {
+            aux = A;
+            A = C;
+            C = aux;
+        }
+        if (A < D)
+        {
+            aux = D;
+            D = A;
+            A = aux;
+        }
+        if (B < C)
+        {
+            aux = C;
+            C = B;
+            B = aux;
+        }
+        if (B < D)
+        {
+            aux = D;
+            D = B;
+            B = aux;
+        }
+        if (C < D)
+        {
+            aux = C;
+            C = D;
+            D = aux;
+        }
+        
+        printf("Valores em ordem decrescente:\n");
+        printf("\n=============================\n");
+        printf("%d %d %d %d\n\n", A, B, C, D);
+        
+        i++;
+    }
+    
+    return 0;
+}

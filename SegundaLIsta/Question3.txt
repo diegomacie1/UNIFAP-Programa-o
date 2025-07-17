@@ -1,0 +1,66 @@
+/*Contrua um algoritmo que leia a media salarial da população.
+media do numero de filhos 
+maior salario
+percentual de pessoas com salario até R$100 
+O fim da leitura de dados se dará com a entrada de um salário negativo.
+Use o comando enquanto-faça*/
+
+#include <stdio.h>
+
+int main()
+{
+    int filhos, contadorS = 0, contadorF = 0, somaS = 0, somaF = 0, salariomiq100 = 0;
+    float maiorS = 0.0, salario, percent = 0.0, mediaF = 0.0, mediaS = 0.0;
+
+    while (1)
+    {
+        printf("Qual é o seu salário?\n");
+        scanf("%f", &salario);
+        if (salario < 0)
+        {
+            printf("Você encerrou a contagem.\n");
+            break;
+        }
+        contadorS++;
+        somaS += salario;
+        printf("Quantos filhos você tem?\n");
+        scanf("%d", &filhos);
+        if (filhos < 0)
+        {
+            printf("Erro: insira uma quantidade maior ou igual a zero.\n");
+            continue;
+        }
+        contadorF++;
+        somaF += filhos;
+        if (salario > maiorS)
+        {
+            maiorS = salario;
+        }
+        
+        if (salario <= 100)
+        {
+            salariomiq100++;
+        }
+        
+        
+    }
+    if (contadorS == 0)
+    {
+        printf("Nenhum número válido foi inserido.\n");
+
+        return 1;
+    }
+    else
+    {
+        mediaS = (float) somaS / contadorS;
+        mediaF = (float) somaF / contadorF;
+        percent = ((float) salariomiq100 / contadorS) * 100;
+
+        printf("A média salarial da população foi: %.2f\n", mediaS);
+        printf("A média do número de filhos da população foi: %.2f\n", mediaF);
+        printf("O maior salário registrado foi: %.2f\n", maiorS);
+        printf("O percentual de pessoas com salário até R$100,00 foi: %.2f%%\n", percent);
+    }
+
+    return 0;
+}

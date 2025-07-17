@@ -1,0 +1,30 @@
+/*Escrever um algoritmo que lê um número não determinado de pares de valores m,n, todos inteiros e positivos, um
+par de cada vez, e calcula e escreve a soma dos n inteiros consecutivos a partir de m inclusive.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int M, N, soma;
+    while (1)
+    {
+        printf("Insira um valor para M:\n");
+        scanf("%d", &M);
+
+        printf("Insira um valor para N (Digite zero ou um número negativo para encerrar a contagem):\n");
+        scanf("%d", &N);
+        if (N <= 0)
+        {
+            break;
+        }
+        
+        soma = 0;
+        for (int i = 0; i < N; i++)
+        {
+            soma += M + i;
+        }
+        printf("A soma dos inteiros consecutivos a partir de m inclusive: %d\n\n", soma);
+    }
+
+    return 0;
+}

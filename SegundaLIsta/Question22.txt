@@ -1,0 +1,86 @@
+/*Colete os dados de idade, sexo m/f e salario.
+Faça um algoritmo que informe a media de salario do grupo.
+a maior e menor idade do grupo.
+a quantidade de mulheres com salario ate 100. 
+encerre a entrada de dados quando for digitada uma idade negativa.
+(Use o comando enquanto faça)*/
+#include <stdio.h>
+
+int main()
+{
+    int maiorI = 0, menorI = 9999, idade, sexo, contadorMS = 0, contadorS = 0;
+    float salario, somaS = 0.0, mediaSG = 0.0;
+
+    while (1)
+    
+    {
+        printf("Qual é a sua idade? (Digite uma idade negativa para encerrar a contagem)\n");
+        scanf("%d", &idade);
+
+        if (idade < 0)
+        {
+            printf("Você encerrou a contagem.\n");
+
+            break;
+        }
+
+        if (idade > maiorI)
+        {
+            maiorI = idade;
+        }
+        if (idade < menorI)
+        {
+            menorI = idade;
+        }
+
+        printf("Qual seu sexo? digite (zero) 0 para homem e 1 (um) para mulher.\n");
+        scanf("%d", &sexo);
+        if (sexo < 0 || sexo > 1)
+        {
+            do
+            {
+                printf("Erro: por favor insira 1 (um) ou 0 (zero).\n");
+                printf("Qual seu sexo? digite (zero) 0 para homem e 1 (um) para mulher.\n");
+                scanf("%d", &sexo);
+            } while (sexo < 0 || sexo > 1);
+            
+        }
+        
+        printf("Insira o valor do seu salário.\n");
+        scanf("%f", &salario);
+
+        if (salario < 0)
+        {
+            do
+            {
+                printf("Erro: por favor, insira um salário válido.\n");
+                printf("Insira o valor do seu salário.\n");
+                scanf("%f", &salario);
+            } while (salario < 0);
+        }
+        
+        contadorS++;
+        somaS += salario;
+
+        if (sexo == 1 && salario <= 100)
+        {
+            contadorMS++;
+        }
+        
+    }
+    if (contadorS > 0)
+    {
+        mediaSG = (float)somaS / contadorS;
+
+        printf("A média salarial deste grupo foi: %.1f\n", mediaSG);
+        printf("A maior idade do registrada no grupo foi: %d\n", maiorI);
+        printf("A menor idade registrada no grupo foi: %d\n", menorI);
+        printf("A quantidade de mulheres com salário até R$100,00 foi: %d\n", contadorMS);
+    }
+    else
+    {
+        printf("Nenhum número válido foi inserido.\n");
+    }
+
+    return 0;
+}

@@ -1,0 +1,56 @@
+/*Colete:
+sexo (masculino e feminino).
+cor dos olhos (azuis, verdes ou castanhos)
+cor dos cabelos (louros, castanhos, pretos)
+idade
+Faça um algoritmo que determina e escreva:
+a maior idade dos habitantes
+a quantidade de individuos do sexo feminino cuja idade está entre 18 e 35 anos inclusive e que tenham olhos verdes e cabelos louros.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int idade, sexo, cor_do_cabelo, femininoentre18e35 = 0, cor_dos_olhos, maioridade = 0;
+
+    while (1)
+    {
+        printf("Informe a sua idade.\n");
+        scanf("%d", &idade);
+        if (idade == -1)
+        {
+            printf("Você encerrou a contagem.\n");
+
+            break;
+        }
+        if (idade > maioridade)
+        {
+            maioridade = idade;
+        }
+
+        printf("Qual é a cor dos seus olhos? azuis? digite 1, verdes? digite 2 ou castanhos? digite 3\n");
+        scanf("%d", &cor_dos_olhos);
+
+        printf("Qual é cor do seu cabelo? louros? digite 1, castanhos? digite 2 ou pretos? digite 3)\n");
+        scanf("%d", &cor_do_cabelo);
+
+        printf("Informe seu sexo. Digite 1 (um) para masculino e 2 (dois) para feminino.\n");
+        scanf("%d", &sexo);
+        if (sexo == 2 && idade >= 18 && idade <= 35 && cor_dos_olhos == 2 && cor_do_cabelo == 1)
+        {
+            femininoentre18e35++;
+        }
+        
+    }
+    if (maioridade == 0)
+    {
+        printf("Nenhum número válido foi inserido.\n");
+    }
+    else
+    {
+        printf("A maior idade registrada foi: %d\n", maioridade);
+        printf("A quantidade de indivíduos do sexo feminino cuja idade está entre 18 e 35 anos inclusive e que tenham olhos verdes e cabelos louros foi: %d\n", femininoentre18e35);
+    }
+
+    return 0;
+}

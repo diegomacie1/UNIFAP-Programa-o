@@ -1,0 +1,41 @@
+/*Escreva um algoritmo que leia 50 valores e encontre o maior e menor deles. Mostre o resultado.*/
+
+#include <stdio.h>
+
+int main(){
+
+    int x, Maior_variavel, Menor_variavel;
+
+    printf("Insira um número.\n");
+    scanf("%d", &x);
+
+    Maior_variavel = x;
+    Menor_variavel = x;
+
+    for (int i = 1; i < 50; i++)
+    {
+        printf("Insira um número.\n");
+        scanf("%d", &x);
+
+        if (x > Maior_variavel)
+        {
+            Maior_variavel = x;
+        }
+        else if (x < Menor_variavel)
+        {
+            Menor_variavel = x;
+        }
+        
+    }
+    if ( Maior_variavel != Menor_variavel)
+    {
+        printf("O maior valor: %d\n", Maior_variavel);
+        printf("O menor valor foi: %d\n", Menor_variavel);
+    }
+    else
+    {
+        printf("Os números inseridos são iguais.\n");
+    }
+
+    return 0;
+}
