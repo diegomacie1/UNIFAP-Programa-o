@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main()
+{
+    int x, tipo;
+
+    printf("Informe a altura do retângulo.\n");
+    scanf("%d", &x);
+
+    if (x <= 0)
+    {
+        printf("Por favor, insira um número positivo e maior que zero.\n");
+        
+        return 1;
+    }
+    
+    printf("Você deseja que o quadrado seja vazado (digite 0), ou preenchido digite 1.\n");
+    scanf("%d", &tipo);
+
+    if (tipo == 0)
+    {
+        for (int  i = 0; i < x; i++)
+        {
+            printf(" *");
+        }
+        printf("\n");
+        for (int i = 0; i < x - 2; i++)
+        {
+            printf(" *");
+            for (int j = 0; j < x - 2; j++)
+            {
+                printf("  ");
+            }
+            printf(" *\n");
+        }
+        for (int  i = 0; i < x; i++)
+        {
+            printf(" *");
+        }
+        printf("\n");
+    }
+    else
+    {
+        for (int  i = 0; i < x; i++)
+        {
+            for (int j = x; j >= 1; j--)
+            {
+                printf(" *");
+            }
+            printf("\n");
+        }
+    }
+    return 0;
+}

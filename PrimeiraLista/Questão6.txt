@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+int main()
+{
+    int B, L, A;
+  
+    printf("Insira o valor de asteriscos que a árvore deve ter (Digite uma valor ímpar positivo e que seja maior ou igual que 3):\n");
+    scanf("%d", &B);
+
+    if (B <= 0 || B % 2 == 0)
+    {
+        printf("Erro: Por favor, insira um número válido.\n");
+
+        return 1;
+    }
+    printf("Insira o valor da largura do tronco que a árvore deve possuir (Insira um valor que seja maior ou igual a 1 e que seja menor que a metado do valor dado para B):\n");
+    scanf("%d", &L);
+    
+    if (L <= 0 || L > B / 2)
+    {
+        printf("Erro: Por favor, insira um número válido.\n");
+
+        return 1;
+    }
+    printf("Insira a altura que o tronco da árvore deve ter (insira um valor que seja maior ou igual a 2 e que seja menor que a metade do valor inserido em B):\n");
+    scanf("%d", &A);
+    
+    if (A < 2 || A > B / 2)
+    {
+        printf("Erro: Por favor, insira um número válido.\n");
+
+        return 1;
+    }
+    for (int i = 1; i <= B; i += 2)
+        {
+            for (int k = 0; k < (B - i) / 2; k++)
+            {
+                printf("  ");
+            }
+            for (int j = 1; j <= i; j++)
+            {
+                printf(" *");
+            }
+            printf("\n");
+        }
+    for (int i = 0; i < A; i++)
+    {
+        
+        for (int j = 0; j < (B - L) / 2; j++)
+        {
+            printf("  ");
+        }
+        for (int j = 0; j < L; j++)
+        {
+            printf(" *");
+        }
+        printf("\n");
+    }
+
+    return 0;
+
+}

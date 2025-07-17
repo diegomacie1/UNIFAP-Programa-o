@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    
+    printf("Informe o valor da largura central do losango (Que seja positivo e ímpar):\n");
+    scanf("%d", &n);
+
+    if (n % 2 == 0 || n < 0)
+    {
+        printf("Erro: Insira um valor positivo e ímpar.\n");
+
+        return 1;
+    }
+    else
+    {
+        for (int i = 1; i <= n; i += 2)
+        {
+            for (int k = 0; k < (n - i) / 2; k++)
+            {
+                printf(" ");
+            }
+            for (int j = 1; j <= i; j++)
+            {
+                printf("x");
+            }
+            printf("\n");
+        }
+        
+        for (int i = n - 2; i >= 1; i-= 2)
+        {
+            for (int k = 0; k < (n - i) / 2; k++)
+            {
+                printf(" ");
+            }
+            for (int j = 1; j <= i; j++)
+            {
+                printf("x");
+            }
+            printf("\n");
+        }
+    }
+    
+    return 0;
+}

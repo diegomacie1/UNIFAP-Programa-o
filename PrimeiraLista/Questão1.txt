@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, valor, i = 0;
+    printf("Insira o valor que ditará o valor da altura do triângulo de pascal:\n");
+    scanf("%d", &n);
+
+    if (n <= 0)
+    {
+        printf("Por favor, insira um valor inteiro e positivo.\n");
+
+        return 1;
+    }
+    
+    while (i < n)
+    {
+        valor = 1;
+        for (int k = 0; k < n - i - 1; k++)
+        {
+            printf("  ");
+        }
+
+        for (int j = 0; j <= i; j++)
+        {
+            printf("%4d", valor);
+            valor = valor * (i - j) / (j + 1);
+        }
+        
+        printf("\n");
+        i++;
+    }
+
+    return 0;
+}
