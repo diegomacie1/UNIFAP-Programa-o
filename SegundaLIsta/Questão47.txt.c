@@ -1,0 +1,34 @@
+/*Uma loja tem 150 clientes cadastrados e deseja mandar uma correspondência a cada um deles anunciando um
+bônus especial. Escreva um algoritmo que leia o nome do cliente e o valor das suas compras no ano passado e calcule
+um bônus de 10% se o valor das compras for menor que 500.000 e de15 %, caso contrário.*/
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char nome[250];
+    int i = 0;
+    float Vcompras;
+
+    while (i < 150)
+    {
+        printf("Insira seu nome:\n");
+        fgets(nome, 250, stdin);
+        nome[strlen(nome)-1] = '\0';
+        
+        printf("Qual foi o total do valor de compras no ano passado?\n");
+        scanf("%f", &Vcompras);
+        getchar();
+
+        if (Vcompras < 500000)
+        {
+            printf("Caro cliente %s, seu bonus com base em suas compras do ano passado foi de 10%% sendo um total de: R$%.2f\n", nome, Vcompras * 0.10);
+        }
+        else
+        {
+            printf("Caro cliente %s, seu bonus com base em suas compras do ano passado foi de 15%% sendo um total de: R$%.2f\n", nome, Vcompras * 0.15);
+        }
+        i++;
+    }
+    return 0;
+}
